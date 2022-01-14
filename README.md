@@ -1,2 +1,2 @@
-# dev-study
-Exercises related to software development.
+# dev-learning
+Resources related to software development learning.
