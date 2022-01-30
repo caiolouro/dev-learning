@@ -26,11 +26,9 @@ var intersect = function (nums1, nums2) {
 	console.log("result", JSON.stringify(result, null, 4))
 }
 
-// For this implementation, the nums1 array should be the shorter one, so in some cases, the for loop will end quickly
+// For this implementation, the nums1 array should be the shorter one, so that for some inputs the for loop will end quickly
 var forcedInputSortingIntersect = function (nums1, nums2) {
-	const ascSortFn = function (a, b) {
-		return a - b
-	}
+	const ascSortFn = (a, b) => a - b
 	nums1.sort(ascSortFn)
 	nums2.sort(ascSortFn)
 
@@ -43,9 +41,7 @@ var forcedInputSortingIntersect = function (nums1, nums2) {
 	for (let i = 0; i < nums1.length; i++) {
 		const num1 = nums1[i]
 
-		if (num1 > nums2[j]) {
-			while (num1 > nums2[j]) j++
-		}
+		while (num1 > nums2[j]) j++
 
 		if (num1 == nums2[j]) {
 			result.push(num1)
@@ -55,6 +51,7 @@ var forcedInputSortingIntersect = function (nums1, nums2) {
 	}
 
 	console.log("result", JSON.stringify(result, null, 4))
+	// return result
 }
 
 // intersect([4, 9, 5], [9, 4, 9, 8, 4])
