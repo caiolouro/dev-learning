@@ -1,5 +1,3 @@
-// TODO: add unit tests
-
 package main
 
 import "fmt"
