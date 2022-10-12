@@ -1,3 +1,3 @@
-module rotate
+module leetcode
 
 go 1.19

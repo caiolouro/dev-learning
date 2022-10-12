@@ -1,4 +1,4 @@
-package main
+package rotatearray
 
 import (
 	"reflect"
@@ -11,7 +11,7 @@ type TestCase struct {
 	Want []int
 }
 
-func TestRotateWithCopy(t *testing.T) {
+func TestUsingCopy(t *testing.T) {
 	var testCases = []TestCase{
 		{
 			Nums: []int{1, 2, 3, 4, 5, 6, 7},
@@ -31,14 +31,14 @@ func TestRotateWithCopy(t *testing.T) {
 	}
 
 	for _, testCase := range testCases {
-		rotateWithCopy(testCase.Nums, testCase.K)
+		UsingCopy(testCase.Nums, testCase.K)
 		if !reflect.DeepEqual(testCase.Nums, testCase.Want) {
-			t.Fatalf(`rotateWithCopy = %#v, want = %#v`, testCase.Nums, testCase.Want)
+			t.Fatalf(`UsingCopy = %#v, want = %#v`, testCase.Nums, testCase.Want)
 		}
 	}
 }
 
-func TestRotateWithReverse(t *testing.T) {
+func TestUsingReverse(t *testing.T) {
 	var testCases = []TestCase{
 		{
 			Nums: []int{1, 2, 3, 4, 5, 6, 7},
@@ -58,9 +58,9 @@ func TestRotateWithReverse(t *testing.T) {
 	}
 
 	for _, testCase := range testCases {
-		rotateWithReverse(testCase.Nums, testCase.K)
+		UsingReverse(testCase.Nums, testCase.K)
 		if !reflect.DeepEqual(testCase.Nums, testCase.Want) {
-			t.Fatalf(`rotateWithReverse = %#v, want = %#v`, testCase.Nums, testCase.Want)
+			t.Fatalf(`UsingReverse = %#v, want = %#v`, testCase.Nums, testCase.Want)
 		}
 	}
 }
