@@ -12,7 +12,7 @@ type TestCase struct {
 }
 
 func TestUsingCopy(t *testing.T) {
-	var testCases = []TestCase{
+	testCases := []TestCase{
 		{
 			Nums: []int{1, 2, 3, 4, 5, 6, 7},
 			K:    3,
@@ -39,7 +39,7 @@ func TestUsingCopy(t *testing.T) {
 }
 
 func TestUsingReverse(t *testing.T) {
-	var testCases = []TestCase{
+	testCases := []TestCase{
 		{
 			Nums: []int{1, 2, 3, 4, 5, 6, 7},
 			K:    3,
