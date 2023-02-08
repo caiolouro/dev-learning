@@ -7,8 +7,6 @@ COPY . /app
 
 WORKDIR /app
 
-RUN pwd
-
 # compiles /cmd/api files and output as "broker" executable
 RUN CGO_ENABLED=0 go build -o broker ./cmd/api
 
