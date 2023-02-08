@@ -4,7 +4,7 @@ services:
   broker:
     build:
       context: ./broker-service
-      # dockerfile: ./broker-service/Dockerfile # not necessary, because its the default file name
+      # dockerfile: ./broker-service/Dockerfile # not necessary, because its using the default file name
     restart: always
     ports:
       - "8080:80" # maps port 8080 on localhost to 80 on the container
