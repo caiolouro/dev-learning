@@ -34,7 +34,7 @@ func writeJSON(w http.ResponseWriter, status int, data any, headers ...http.Head
 		return err
 	}
 
-	if len(headers) > 0 { // using variadics to make this last parameter optional
+	if len(headers) > 0 { // using variadics to emulate this last parameter optional
 		for k, v := range headers[0] {
 			w.Header()[k] = v
 		}
