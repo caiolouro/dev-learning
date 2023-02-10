@@ -10,7 +10,8 @@ Install Docker and Go version 1.18 [directly](https://go.dev/doc/install) or by 
 
 ## Starting the services
 
-Run `make fresh-start-back` and then, on another tab, run `make start-front`.
+1. Create a `db-data` folder and, inside it, a `postgres` folder
+1. Run `make fresh-start-back` and then, on another tab, run `make start-front`.
 
 ## Finally
 

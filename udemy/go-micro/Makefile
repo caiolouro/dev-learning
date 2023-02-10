@@ -1,5 +1,6 @@
 FRONT_END_BINARY=front
 BROKER_BINARY=broker
+AUTH_BINARY=auth
 
 # up: starts all containers without forcing build
 start-back:
@@ -8,7 +9,7 @@ start-back:
 	@echo "Docker images started!"
 
 # stops docker-compose (if running), builds all projects and starts docker compose
-fresh-start-back: build-broker
+fresh-start-back: build-broker build-auth
 	@echo "Stopping docker images (if running...)"
 	docker compose down
 	@echo "Building (when required) and starting docker images..."
@@ -25,6 +26,11 @@ stop-back:
 build-broker:
 	@echo "Building broker binary..."
 	cd ./broker-service && env GOOS=linux CGO_ENABLED=0 go build -o ${BROKER_BINARY} ./cmd/api
+	@echo "Done!"
+
+build-auth:
+	@echo "Building auth binary..."
+	cd ./auth-service && env GOOS=linux CGO_ENABLED=0 go build -o ${AUTH_BINARY} ./cmd/api
 	@echo "Done!"
 
 # builds the front end binary
