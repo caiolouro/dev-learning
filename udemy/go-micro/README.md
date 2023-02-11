@@ -6,12 +6,12 @@ Files to code along the [Working with Microservices in Go (Golang)](https://www.
 
 ## Prerequisites
 
-Install Docker and Go version 1.18 [directly](https://go.dev/doc/install) or by using a version manager like [asdf](https://asdf-vm.com/) (the version config file is under source control).
+1. Install Docker and Go version 1.18 [directly](https://go.dev/doc/install) or by using a version manager like [asdf](https://asdf-vm.com/) (the version config file is under source control);
+2. Create a `db-data` folder and, inside it, a `postgres` folder.
 
 ## Starting the services
 
-1. Create a `db-data` folder and, inside it, a `postgres` folder
-1. Run `make fresh-start-back` and then, on another tab, run `make start-front`.
+Run `make fresh-start-back` and then, on another tab, run `make start-front`.
 
 ## Finally
 
