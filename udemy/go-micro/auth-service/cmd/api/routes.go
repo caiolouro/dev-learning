@@ -4,10 +4,11 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi/v5"
+	"github.com/go-chi/chi/v5/middleware"
 	"github.com/go-chi/cors"
 )
 
-func routes() http.Handler {
+func (app *App) routes() http.Handler {
 	mux := chi.NewRouter()
 
 	mux.Use(cors.Handler(cors.Options{
@@ -18,6 +19,10 @@ func routes() http.Handler {
 		AllowCredentials: true,
 		MaxAge:           300,
 	}))
+
+	mux.Use(middleware.Heartbeat("/ping"))
+
+	mux.Post("/authenticate", app.Authenticate)
 
 	return mux
 }

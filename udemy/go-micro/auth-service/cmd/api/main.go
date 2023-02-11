@@ -20,7 +20,7 @@ var connAttempts = 0
 
 const connAttemptsDelaySeconds = 2
 
-type Config struct {
+type App struct {
 	DB     *sql.DB
 	Models data.Models
 }
@@ -30,17 +30,17 @@ func main() {
 
 	conn := connectToDB()
 	if conn == nil {
-		log.Panic("Couldn't connec to DB")
+		log.Panic("Couldn't connect to DB")
 	}
 
-	// app := Config{
-	// 	DB:     conn,
-	// 	Models: data.New(conn),
-	// }
+	app := App{
+		DB:     conn,
+		Models: data.New(conn),
+	}
 
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%s", port),
-		Handler: routes(),
+		Handler: app.routes(),
 	}
 
 	err := srv.ListenAndServe()
