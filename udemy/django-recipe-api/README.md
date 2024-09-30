@@ -1,1 +1,0 @@
-Based on Udemy's course "[Build a backend REST API with Python & Django](https://www.udemy.com/course/django-python-advanced/)".
